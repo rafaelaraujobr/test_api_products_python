@@ -10,7 +10,10 @@
 Depois de clonar o repositório, você deseja criar um ambiente virtual para ter uma instalação limpa do python.
 Você pode fazer isso executando o comando
 ```
-python -m venv env
+python -m venv venv
+./venv/Scripts/Activate.ps1
+pip install django
+pip install djangorestframework
 python manage.py migrar
 python manage.py runserver
 ```
