@@ -1,40 +1,36 @@
-# SIMPLE CRUD API WITH DJANGO REST FRAMEWORK
-[Django REST framework](http://www.django-rest-framework.org/) is a powerful and flexible toolkit for building Web APIs.
+# API CRUD COM DJANGO REST FRAMEWORK PARA CONTROLE DE PRODUTOS
+[Framework Django REST](http://www.django-rest-framework.org/) é um kit de ferramentas poderoso e flexível para construir APIs da Web.
 
-## Requirements
+## Requisitos
 - Python 3.6
 - Django 3.1
-- Django REST Framework
+- Estrutura Django REST
 
-## Installation
-After you cloned the repository, you want to create a virtual environment, so you have a clean python installation.
-You can do this by running the command
+## Instalação
+Depois de clonar o repositório, você deseja criar um ambiente virtual para ter uma instalação limpa do python.
+Você pode fazer isso executando o comando
 ```
 python -m venv env
+python manage.py migrar
+python manage.py runserver
 ```
 
-After this, it is necessary to activate the virtual environment, you can get more information about this [here](https://docs.python.org/3/tutorial/venv.html)
+Depois disso, é necessário ativar o ambiente virtual, você pode obter mais informações sobre isso [aqui](https://docs.python.org/3/tutorial/venv.html)
 
-You can install all the required dependencies by running
-```
-pip install -r requirements.txt
-```
+## Estrutura
+Em uma API RESTful, os endpoints (URLs) definem a estrutura da API e como os usuários finais acessam os dados de nosso aplicativo usando os métodos HTTP - GET, POST, PUT, DELETE. Os endpoints devem ser logicamente organizados em torno de _collections_ e _elements_, ambos recursos.
 
-## Structure
-In a RESTful API, endpoints (URLs) define the structure of the API and how end users access data from our application using the HTTP methods - GET, POST, PUT, DELETE. Endpoints should be logically organized around _collections_ and _elements_, both of which are resources.
+No nosso caso, temos 2 recursos, `produtos`, `fornecedores`, então usaremos as seguintes URLS - `/products/` e `/providers` para coleções e elementos, respectivamente:
 
-In our case, we have one single resource, `products`, so we will use the following URLS - `/products/` and `/products/<id>` for collections and elements, respectively:
-
-Endpoint |HTTP Method | CRUD Method | Result
+Terminal |Método HTTP | Método CRUD | Resultado
 -- | -- |-- |--
-`products` | GET | READ | Get all products
-`products/:id` | GET | READ | Get a single product
-`products`| POST | CREATE | Create a new produc
-`products/:id` | PUT | UPDATE | Update a product
-`products/:id` | DELETE | DELETE | Delete a product
-
-`providers` | GET | READ | Get all providers
-`providers/:id` | GET | READ | Get a single provider
-`providers`| POST | CREATE | Create a new provider
-`providers/:id` | PUT | UPDATE | Update a provider
-`providers/:id` | DELETE | DELETE | Delete a provider
+`products` | GET | LEIA | Obtenha todos os produtos
+`products/:id` | GET | LEIA | Obtenha um único produto
+`products`| POST | CRIAR | Criar um novo produto
+`products/:id` | PUT | ATUALIZAÇÃO | Atualizar um produto
+`products/:id` | DELETE | APAGAR | Excluir um produto
+`providers` | GET | LEIA | Obter todos os fornecedores
+`providers/:id` | GET | LEIA | Obtenha um único fornecedor
+`providers`| POST | CRIAR | Criar um novo fornecedor
+`providers/:id` | PUT | ATUALIZAÇÃO | Atualizar um fornecedor
+`providers/:id` | DELETE | APAGAR | Excluir um fornecedor
