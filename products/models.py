@@ -1,9 +1,10 @@
 from django.db import models
-# from uuid import uuid4
+from uuid import uuid4
 
 # Create your models here.
 
 class Provider(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
@@ -13,6 +14,7 @@ class Provider(models.Model):
 
 
 class Product(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)

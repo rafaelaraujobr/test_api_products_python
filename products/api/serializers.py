@@ -5,7 +5,7 @@ from products import models
 class ProviderSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Provider
-        fields = ('name', 'email', 'phone', 'created_at')
+        fields = '__all__'
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
